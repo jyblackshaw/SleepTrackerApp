@@ -2,7 +2,7 @@
 
 A mobile application built with Ionic/Angular that helps users track their sleep patterns and daytime sleepiness levels using the Stanford Sleepiness Scale.
 
-## Demo Video (Click!)
+## Demo Video (Click To Watch!)
 
 [![Watch the Demo](https://img.youtube.com/vi/E7X-MG05KRQ/maxresdefault.jpg)](https://youtu.be/E7X-MG05KRQ)
 
