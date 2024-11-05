@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="custom-title">Sleep Log</ion-title>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="closeModal()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="custom-content">
+  <div class="header-section">
+    <h2>Record Your Sleep</h2>
+  </div>
+
+  <ion-list lines="full" class="custom-list">
+    <ion-item>
+      <ion-label class="custom-header" position="stacked">Start Time</ion-label>
+      <ion-datetime display-format="MMM D, YYYY HH:mm" [(ngModel)]="sleepStart"></ion-datetime>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label class="custom-header" position="stacked">End Time</ion-label>
+      <ion-datetime display-format="MMM D, YYYY HH:mm" [(ngModel)]="sleepEnd"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <div class="submit-button">
+    <ion-button expand="block" (click)="createLog()">Submit</ion-button>
+  </div>
+</ion-content>

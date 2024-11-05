@@ -1,0 +1,40 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <ion-title style="text-align: center" size="default">SlumberSync™</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background-color: darkred;">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">SlumberSync™</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-row>
+    <ion-col><item-item class="time">
+      <h1>{{ time | date: 'h:mm a' }}</h1>
+      <h2>{{ time | date: 'longDate' }}</h2>
+    </item-item></ion-col>
+  </ion-row>
+  <ion-list lines="none" class="ion-padding">
+    <!-- <ion-list-header size="small">Select Option Below:</ion-list-header> -->
+   
+    <ion-item class="ion-justify-content-center">
+      <ion-button expand="block" size="default" color="tertiary" (click)="openModal()"><ion-icon name="moon-sharp"></ion-icon>&nbsp;&nbsp;Log Nighttime Sleep</ion-button>
+    </ion-item>
+    <ion-item class="ion-justify-content-center">
+      <ion-button expand="block" size="default" color="tertiary" (click)="openModal_sleepy()"><ion-icon name="sunny-sharp"></ion-icon>&nbsp;&nbsp;Log Daytime Sleep</ion-button>
+    </ion-item>
+    <ion-item>__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</ion-item>
+    <ion-item class="ion-justify-content-center">
+        <ion-button expand="block" size="default" color="tertiary" (click)="nextpage()"><ion-icon name="newspaper-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sleep Log&nbsp;&nbsp;&nbsp;&nbsp;</ion-button>
+    </ion-item>
+  </ion-list>
+  <p><ion-icon name="bed-sharp"></ion-icon></p>
+</ion-content>
+
+<ion-footer>SlumberSync™ - Sleep Tracker<ion-footer>
+<!--
+  
+-->

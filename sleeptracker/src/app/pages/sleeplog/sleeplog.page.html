@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center" size="default">Logs</ion-title>
+    
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="clearLogs()">
+        <ion-icon name="trash-bin"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="tertiary" (click)="backpage()">
+        back
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-button color="tertiary" (click)="showOvernight()">{{overnightButtonLabel}}</ion-button>
+  <div *ngIf="overnight">
+  <ion-card *ngFor="let data of overnightSleeps">
+    <ion-card-header>
+      <ion-card-subtitle>Logged at: {{data.loggedAt}}</ion-card-subtitle>
+      <ion-card-title>{{data.dateString()}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{data.summaryString()}}
+    </ion-card-content>
+  </ion-card>
+</div>
+<ion-button color="tertiary" (click)="showSleepiness()">{{sleepinessButtonLabel}}</ion-button>
+<div *ngIf="sleepiness == true">
+<ion-card *ngFor="let sleep of stanfordSleeps">
+  <ion-card-header>
+  <ion-card-subtitle>{{sleep.loggedAt.toString()}}</ion-card-subtitle>
+  <ion-card-title>{{sleep.summaryString()}}</ion-card-title>
+</ion-card-header>
+
+  <ion-card-content></ion-card-content>
+</ion-card>
+</div>
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center" size="default"></ion-title>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="tertiary" (click)="closeModal()">
+        back
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- <ion-button slot = "start" fill="clear" color="tertiary" (click)="closeModal()"> -->
+<ion-content>
+<p><strong>Log Sleep</strong></p>
+  <ion-list lines="none">
+    <ion-item>
+      <ion-label>Select Day</ion-label>
+      <ion-input
+      placeholder="Enter here"
+        value="{{ date | date: 'MM.dd.yyyy' }}"
+        id="date"
+        class="ion-text-end"
+      ></ion-input>
+      <ion-popover trigger="date" size="fixed">
+        <ng-template>
+          <ion-datetime
+            presentation="date"
+            [(ngModel)]="date"
+            [showDefaultButtons]="true"
+          ></ion-datetime>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+    
+    <!-- <ion-item>How Sleepy were you?</ion-item> -->
+    <ion-item>
+      <ion-label><strong>How Sleepy were you?</strong></ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label class="stanford-description">
+        The <strong>Stanford Sleepiness Scale</strong> is a self-assessment tool that measures an individual's level of sleepiness at a particular moment in time. It uses a seven-point scale, ranging from feeling active and alert to experiencing an intense urge to sleep, to help individuals identify their current state of sleepiness and potential need for rest."
+      </ion-label>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-range [min]="1" [max]="7" [value]="5" [pin]="true" [ticks]="true" [snaps]="true" [(ngModel)]="sleepiness"></ion-range>
+    </ion-item>
+    <ion-item *ngIf="sleepiness != null">
+      {{sleepinessArray[sleepiness]}}
+    </ion-item>
+    <ion-item></ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col style="text-align: center">
+      <ion-button color="tertiary" (click)="submitLog()">Submit</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

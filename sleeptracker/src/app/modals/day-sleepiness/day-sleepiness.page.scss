@@ -1,0 +1,13 @@
+p {
+    color: #8c8c8c;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .stanford-description {
+    font-size: 0.65em; 
+    font-style: italic; /* Italicize the text */
+    word-wrap: break-word; /* Ensures long words are broken and wrapped to the next line */
+    white-space: normal; /* Allows text to wrap */
+    overflow-wrap: break-word;
+  }
